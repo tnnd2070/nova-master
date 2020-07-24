@@ -4933,7 +4933,7 @@ class LibvirtConnTestCase(test.TestCase):
         db.instance_get_by_uuid(mox.IgnoreArg(), mox.IgnoreArg(),
                                 columns_to_join=['info_cache',
                                                  'security_groups'],
-                                use_slave=False
+                                use_subordinate=False
                                 ).AndReturn(instance)
         self.mox.StubOutWithMock(driver, "block_device_info_get_mapping")
         driver.block_device_info_get_mapping(vol
@@ -5040,7 +5040,7 @@ class LibvirtConnTestCase(test.TestCase):
         db.instance_get_by_uuid(mox.IgnoreArg(), mox.IgnoreArg(),
                                 columns_to_join=['info_cache',
                                                  'security_groups'],
-                                use_slave=False
+                                use_subordinate=False
                                 ).AndReturn(instance)
         os.path.exists(mox.IgnoreArg()).AndReturn(False)
         os.path.exists(mox.IgnoreArg()).AndReturn(True)
